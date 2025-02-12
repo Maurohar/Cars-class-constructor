@@ -8,12 +8,21 @@ class Autos {
     this.año = año;
     this.modelo = modelo;
     this.precio = precio;
+    this.drive = function () {
+      console.log(`Tu estas conduciendo un auto de la marca ${this.marca}`);
+    };
   }
+
   //creamos un metodo llamado monstrarDATOS concatenando this.object
   monstrarDatos() {
     console.log(
       `Marca: ${this.marca}, Año:${this.año}, Modelo:${this.modelo}, Precio:${this.precio}`
     );
+  }
+
+  mensaje() {
+    console.log("Hola soy un mensaje");
+    this.drive(); // Ejecuta el método drive() directamente para el objeto que lo llama.
   }
 }
 
@@ -26,5 +35,5 @@ const autos = [
   new Autos("Nissan", 2017, "Sentra", 50000),
 ];
 //dentro de nuestro array de objetos autos, vamos a recorrer cada uno de los objetos
-
 autos.forEach((auto) => auto.monstrarDatos());
+autos[2].mensaje();
